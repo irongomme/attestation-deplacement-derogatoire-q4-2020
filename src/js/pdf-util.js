@@ -10,7 +10,7 @@ const ys = {
   sport_animaux: 358,
   convocation: 295,
   missions: 255,
-  enfants: 211,
+  liberte: 211
 }
 
 export async function generatePdf (profile, reasons, pdfBase) {
@@ -33,7 +33,7 @@ export async function generatePdf (profile, reasons, pdfBase) {
   } = profile
 
   const data = [
-    `Cree le: ${creationDate} a ${creationHour}`,
+    `Cree le: ${datesortie} a ${heuresortie}`,
     `Nom: ${lastname}`,
     `Prenom: ${firstname}`,
     `Naissance: ${birthday} a ${placeofbirth}`,
@@ -77,6 +77,7 @@ export async function generatePdf (profile, reasons, pdfBase) {
   reasons
     .split(', ')
     .forEach(reason => {
+      console.log(reason)
       drawText('x', 78, ys[reason], 18)
     })
 

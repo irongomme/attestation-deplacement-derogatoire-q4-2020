@@ -62,6 +62,10 @@ const createFormGroup = ({
 
   if (name === 'heuresortie') {
     input.value = getCurrentTime()
+  } else if (name === 'heuresortie') {
+    input.value = getCurrentTime()
+  } else {
+    input.value = placeholder
   }
 
   const validityAttrs = {
@@ -152,6 +156,7 @@ export function createForm () {
         autofocus: index === 0,
         ...field,
         name: field.key,
+        default: field.default,
       })
 
       return formGroup
